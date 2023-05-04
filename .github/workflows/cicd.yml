@@ -80,11 +80,11 @@ jobs:
 
         - name: Unzip build
           run: |
-            unzip --qq ./buildartifacts/Application.zip -d .
+            unzip --qq -o ./buildartifacts/Application.zip -d .
 
         - name: Unzip ARM Templs
           run: |
-            unzip --qq ./buildartifacts/Application.zip -d .
+            unzip --qq -o ./buildartifacts/Application.zip -d .
 
         - name: Login to Azure
           uses: azure/login@v1
