@@ -98,7 +98,7 @@ jobs:
           with:
             inlineScript: |
                 az group create --name "${{ env.RESOURCEGROUPNAME }}" --location "${{ env.LOCATION }}"
-                az deployment group create --resource-group "${{ env.RESOURCEGROUPNAME }}"  --template-file ./armTemplates/appsvc.json
+                az deployment group create --resource-group "${{ env.RESOURCEGROUPNAME }}"  --template-file ./appsvc.json
                  --parameters webAppName="${{ env.AZURE_WEBAPP_NAME }}" hostingPlaneName="${{ env.HOSTINGPLANENAME }}" appInsightsLocation="${{ env.APPINSIGHTLOCATION }}" sku="${{ env.SKU }}"
         
         - name: Deploy the Web App
