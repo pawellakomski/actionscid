@@ -11,7 +11,7 @@ env:
     RESOURCEGROUPNAME: "actionscicd"
     LOCATION: "eastus"
     HOSTINGPLANENAME: "actionscicd-plan"
-    APPINSIGHTLOCATION: "Poland Central"
+    APPINSIGHTLOCATION: "eastus"
     SKU: "S1 Standard"
 
 jobs:
