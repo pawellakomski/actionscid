@@ -50,7 +50,7 @@ jobs:
 
         - name: Archive ARM Temps
           run: |
-            zip -qq -r ./deploymenttemplates/armteamplates.zip ./armTemplates
+            zip -qq -r ./deploymenttemplates/armtemplates.zip ./armTemplates
 
         - name: Upload ARM Temp Artifacts
           continue-on-error: false
@@ -83,8 +83,8 @@ jobs:
             unzip --qq -o ./buildartifacts/Application.zip -d .
 
         - name: Unzip ARM Templs
-          run: |
-            unzip --qq -o ./buildartifacts/Application.zip -d .
+          run: | 
+            unzip --qq -o ./deploymenttemplates/armtemplates.zip -d .
 
         - name: Login to Azure
           uses: azure/login@v1
@@ -98,7 +98,7 @@ jobs:
           with:
             inlineScript: |
                 az group create --name "${{ env.RESOURCEGROUPNAME }}" --location "${{ env.LOCATION }}"
-                az deployment group create --resource-group "${{ env.RESOURCEGROUPNAME }}"  --template-file ./appsvc.json
+                az deployment group create --resource-group "${{ env.RESOURCEGROUPNAME }}"  --template-file ./armTemplates/appsvc.json
                  --parameters webAppName="${{ env.AZURE_WEBAPP_NAME }}" hostingPlaneName="${{ env.HOSTINGPLANENAME }}" appInsightsLocation="${{ env.APPINSIGHTLOCATION }}" sku="${{ env.SKU }}"
         
         - name: Deploy the Web App
