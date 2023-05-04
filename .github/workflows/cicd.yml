@@ -9,7 +9,7 @@ env:
     AZURE_WEBAPP_PACKAGE_PATH: "build"
     NODE_VERSION: '16.16.0'
     RESOURCEGROUPNAME: "actionscicd"
-    LOCATION: "Poland Central"
+    LOCATION: "eastus"
     HOSTINGPLANENAME: "actionscicd-plan"
     APPINSIGHTLOCATION: "Poland Central"
     SKU: "S1 Standard"
