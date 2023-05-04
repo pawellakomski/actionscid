@@ -60,19 +60,19 @@ jobs:
             path: deploymenttemplates
 
     Deploy:
-        name: Deploy ARM resourceand web app
+        name: Deploy ARM resource and web app
         needs: build
         runs-on: ubuntu-latest
         steps:
         - name: Download build artifacts
-          uses: action/download-artifact@v2
+          uses: action/download-artifact@v3
           continue-on-error: false
           with:
             name: buildartifacts
             path: buildartifacts
 
         - name: Download the ARM artifact
-          uses: action/download-artifact@v2
+          uses: action/download-artifact@v3
           continue-on-error: false
           with:
             name: deploymenttemplates
